@@ -7,8 +7,10 @@ Color black = Colors.black;
 Color white = Colors.white;
 Color grey = Color(0xff82868E);
 
-TextStyle blackstyle =
-    GoogleFonts.poppins(fontWeight: FontWeight.w500, color: black,fontSize: 50);
+double edge = 24;
+
+TextStyle blackstyle = GoogleFonts.poppins(
+    fontWeight: FontWeight.w500, color: black, fontSize: 50);
 
 TextStyle whitestyle =
     GoogleFonts.poppins(fontWeight: FontWeight.w500, color: white);
@@ -18,3 +20,6 @@ TextStyle greystyle =
 
 TextStyle purplestyle =
     GoogleFonts.poppins(fontWeight: FontWeight.w500, color: purple);
+
+TextStyle regulerstyle =
+    GoogleFonts.poppins(fontWeight: FontWeight.w400, color: black);

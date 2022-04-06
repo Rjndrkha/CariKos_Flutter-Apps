@@ -1,3 +1,4 @@
+import 'package:carikos/pages/home_page.dart';
 import 'package:carikos/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +57,12 @@ class SplashPage extends StatelessWidget {
                     width: 210,
                     height: 50,
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      },
                       color: purple,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
