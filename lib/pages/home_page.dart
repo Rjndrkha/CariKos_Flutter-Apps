@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                   SpaceCard(
                     Space(
                         id: 1,
-                        imageUrl: 'assets/images/homeimg/sby.jpg',
+                        imageUrll: 'assets/images/homeimg/sby.jpg',
                         name: 'Oemah Nyaman',
                         price: 150,
                         country: 'Aceh',
@@ -163,7 +163,7 @@ class HomePage extends StatelessWidget {
                   SpaceCard(
                     Space(
                         id: 2,
-                        imageUrl: 'assets/images/homeimg/sby.jpg',
+                        imageUrll: 'assets/images/homeimg/sby.jpg',
                         name: 'Oemah Nyaman',
                         price: 150,
                         country: 'Aceh',
@@ -175,7 +175,7 @@ class HomePage extends StatelessWidget {
                   SpaceCard(
                     Space(
                         id: 3,
-                        imageUrl: 'assets/images/homeimg/sby.jpg',
+                        imageUrll: 'assets/images/homeimg/sby.jpg',
                         name: 'Oemah Nyaman',
                         price: 150,
                         country: 'Aceh',
