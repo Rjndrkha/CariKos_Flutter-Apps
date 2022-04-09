@@ -133,7 +133,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-
+              //REKOMENDED PLACE
               Padding(
                 padding: EdgeInsets.only(left: edge),
                 child: Text(
@@ -146,42 +146,149 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              Column(
-                children: [
-                  SpaceCard(
-                    Space(
-                        id: 1,
-                        imageUrll: 'assets/images/homeimg/sby.jpg',
-                        name: 'Oemah Nyaman',
-                        price: 150,
-                        country: 'Aceh',
-                        rating: 4),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Column(
+                  children: [
+                    SpaceCard(
+                      Space(
+                          id: 1,
+                          imageUrll: 'assets/images/homeimg/sby.jpg',
+                          name: 'Oemah Nyaman',
+                          price: 150,
+                          city: 'Surabaya',
+                          country: 'ID',
+                          rating: 4),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SpaceCard(
+                      Space(
+                          id: 2,
+                          imageUrll: 'assets/images/homeimg/bali.jpg',
+                          name: 'Roemah Nenek',
+                          price: 150,
+                          city: 'Bali',
+                          country: 'ID',
+                          rating: 4),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SpaceCard(
+                      Space(
+                          id: 3,
+                          imageUrll: 'assets/images/homeimg/sby.jpg',
+                          name: 'Hisanah Kost',
+                          price: 150,
+                          city: 'Jakarta',
+                          country: 'ID',
+                          rating: 4),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage()));
+                      },
+                      color: orange,
+                      child: Text(
+                        'Explore More',
+                        style: whitestyle,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              // GUIDANCE
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Text(
+                  'Tips & Guidance',
+                  style: regulerstyle.copyWith(
+                    fontSize: 15,
                   ),
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  SpaceCard(
-                    Space(
-                        id: 2,
-                        imageUrll: 'assets/images/homeimg/sby.jpg',
-                        name: 'Oemah Nyaman',
-                        price: 150,
-                        country: 'Aceh',
-                        rating: 4),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  SpaceCard(
-                    Space(
-                        id: 3,
-                        imageUrll: 'assets/images/homeimg/sby.jpg',
-                        name: 'Oemah Nyaman',
-                        price: 150,
-                        country: 'Aceh',
-                        rating: 4),
-                  ),
-                ],
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        height: 80,
+                        width: 80,
+                        child: Stack(
+                          children: [Image.asset('assets/images/guid1.png')],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'City Guidelines',
+                          style: blackstyle.copyWith(fontSize: 18),
+                        ),
+                        Text(
+                          'Updated 20 Apr',
+                          style: greystyle.copyWith(fontSize: 14),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        height: 80,
+                        width: 80,
+                        child: Stack(
+                          children: [Image.asset('assets/images/guid2.png')],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Jakarta Fairship',
+                          style: blackstyle.copyWith(fontSize: 18),
+                        ),
+                        Text(
+                          'Updated 11 Dec',
+                          style: greystyle.copyWith(fontSize: 14),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               )
             ],
           ),

@@ -4,6 +4,7 @@ class Space {
   final String imageUrll;
   final double price;
   final String country;
+  final String city;
   final int rating;
 
   Space({
@@ -12,6 +13,7 @@ class Space {
     required this.name,
     required this.price,
     required this.country,
+    required this.city,
     required this.rating,
   });
 }
