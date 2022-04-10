@@ -29,7 +29,6 @@ class SplashPage extends StatelessWidget {
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/logokos.png'),
-                        
                       ),
                     ),
                   ),

@@ -1,8 +1,12 @@
 import 'package:carikos/models/city.dart';
 import 'package:carikos/models/space.dart';
+import 'package:carikos/models/tips.dart';
+import 'package:carikos/pages/profile_page.dart';
+import 'package:carikos/pages/splash_page.dart';
 import 'package:carikos/theme.dart';
 import 'package:carikos/widgets/city_card.dart';
 import 'package:carikos/widgets/space_card.dart';
+import 'package:carikos/widgets/tips_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -222,70 +226,84 @@ class HomePage extends StatelessWidget {
                 height: 16,
               ),
               Padding(
-                padding: EdgeInsets.only(left: edge),
-                child: Row(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Column(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        child: Stack(
-                          children: [Image.asset('assets/images/guid1.png')],
-                        ),
-                      ),
+                    TipsCard(
+                      Tips(
+                          id: 1,
+                          imageUrl: 'assets/images/guid1.png',
+                          title: 'City Guidelines',
+                          date: '10 April 2022'),
                     ),
                     const SizedBox(
-                      width: 20,
+                      height: 20,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'City Guidelines',
-                          style: blackstyle.copyWith(fontSize: 18),
-                        ),
-                        Text(
-                          'Updated 20 Apr',
-                          style: greystyle.copyWith(fontSize: 14),
-                        ),
-                      ],
-                    ),
+                    TipsCard(
+                      Tips(
+                          id: 2,
+                          imageUrl: 'assets/images/guid2.png',
+                          title: 'Tips And Trick',
+                          date: '10 April 2022'),
+                    )
                   ],
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 50,
               ),
-              Padding(
-                padding: EdgeInsets.only(left: edge),
+              Container(
+                height: 65,
+                width: MediaQuery.of(context).size.width - (2 * edge),
+                margin: EdgeInsets.symmetric(
+                  horizontal: edge,
+                ),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 239, 243, 247),
+                  borderRadius: BorderRadius.circular(23),
+                ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        child: Stack(
-                          children: [Image.asset('assets/images/guid2.png')],
-                        ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.home_sharp,
+                        color: black,
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.email_sharp,
+                        color: black,
+                      ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Jakarta Fairship',
-                          style: blackstyle.copyWith(fontSize: 18),
-                        ),
-                        Text(
-                          'Updated 11 Dec',
-                          style: greystyle.copyWith(fontSize: 14),
-                        ),
-                      ],
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SplashPage()));
+                      },
+                      icon: Icon(
+                        Icons.my_library_books,
+                        color: black,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.favorite,
+                        color: black,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.person_pin,
+                        color: black,
+                      ),
                     ),
                   ],
                 ),
