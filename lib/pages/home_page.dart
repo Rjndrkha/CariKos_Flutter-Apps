@@ -4,6 +4,7 @@ import 'package:carikos/models/tips.dart';
 import 'package:carikos/pages/profile_page.dart';
 import 'package:carikos/pages/splash_page.dart';
 import 'package:carikos/theme.dart';
+import 'package:carikos/widgets/bottom_navbar.dart';
 import 'package:carikos/widgets/city_card.dart';
 import 'package:carikos/widgets/space_card.dart';
 import 'package:carikos/widgets/tips_card.dart';
@@ -252,66 +253,43 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Container(
-                height: 65,
-                width: MediaQuery.of(context).size.width - (2 * edge),
-                margin: EdgeInsets.symmetric(
-                  horizontal: edge,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 239, 243, 247),
-                  borderRadius: BorderRadius.circular(23),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.home_sharp,
-                        color: black,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.email_sharp,
-                        color: black,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SplashPage()));
-                      },
-                      icon: Icon(
-                        Icons.my_library_books,
-                        color: black,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite,
-                        color: black,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.person_pin,
-                        color: black,
-                      ),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),
       ),
+      floatingActionButton: Container(
+        height: 65,
+        width: MediaQuery.of(context).size.width - (2 * edge),
+        margin: EdgeInsets.symmetric(
+          horizontal: edge,
+        ),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 239, 243, 247),
+          borderRadius: BorderRadius.circular(23),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: const [
+            BottomNavbarItem(
+              imageurl: 'assets/images/icon/icon_home.png',
+              isActive: true,
+            ),
+            BottomNavbarItem(
+              imageurl: 'assets/images/icon/icon_mail.png',
+              isActive: false,
+            ),
+            BottomNavbarItem(
+              imageurl: 'assets/images/icon/icon_card.png',
+              isActive: false,
+            ),
+            BottomNavbarItem(
+              imageurl: 'assets/images/icon/icon_love.png',
+              isActive: false,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
