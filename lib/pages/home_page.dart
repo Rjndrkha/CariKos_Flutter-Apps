@@ -157,7 +157,8 @@ class HomePage extends StatelessWidget {
                   SpaceCard(
                     Space(
                         id: 1,
-                        imageUrll: 'assets/images/homeimg/sby.jpg',
+                        imageUrll:
+                            'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2021/08/25/eed3b589-b0d9-4fc5-8323-f77c641facb1-1629862244144-78346ffa9f0dfcc6148a3647999686a2.jpg',
                         name: 'Oemah Nyaman',
                         price: 150,
                         city: 'Surabaya',
@@ -170,7 +171,8 @@ class HomePage extends StatelessWidget {
                   SpaceCard(
                     Space(
                         id: 2,
-                        imageUrll: 'assets/images/homeimg/bali.jpg',
+                        imageUrll:
+                            'https://cdn.travelio.id/hotel/3e217-58be36bb996f2a78abb53743/66aee169-original-jpg-1280-960-Google-Chrome_l.jpg',
                         name: 'Roemah Nenek',
                         price: 150,
                         city: 'Bali',
@@ -183,7 +185,8 @@ class HomePage extends StatelessWidget {
                   SpaceCard(
                     Space(
                         id: 3,
-                        imageUrll: 'assets/images/homeimg/sby.jpg',
+                        imageUrll:
+                            'https://origin.pegipegi.com/jalan/images/pict1L/Y8/Y905558/Y905558042.jpg',
                         name: 'Hisanah Kost',
                         price: 150,
                         city: 'Jakarta',
