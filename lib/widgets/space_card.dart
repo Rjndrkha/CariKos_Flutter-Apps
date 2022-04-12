@@ -10,96 +10,106 @@ class SpaceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(18),
-          child: SizedBox(
-            width: 130,
-            height: 110,
-            child: Stack(
-              children: [
-                Image.network(
-                  space.imageUrll,
-                  width: 130,
-                  height: 110,
-                  fit: BoxFit.cover,
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    width: 70,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: purple,
-                      borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(36),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/star.png',
-                          width: 22,
-                          height: 22,
-                        ),
-                        Text(
-                          '${space.rating}/5',
-                          style: whitestyle.copyWith(
-                            fontSize: 13,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailPage(space),
           ),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              space.name,
-              style: blackstyle.copyWith(
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(
-              height: 2,
-            ),
-            Text.rich(
-              TextSpan(
-                text: 'Rp${space.price}K',
-                style: purplestyle.copyWith(
-                  fontSize: 16,
-                ),
+        );
+      },
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: SizedBox(
+              width: 130,
+              height: 110,
+              child: Stack(
                 children: [
-                  TextSpan(
-                    text: ' / month',
-                    style: greystyle.copyWith(
-                      fontSize: 16,
+                  Image.network(
+                    space.imageUrll,
+                    width: 130,
+                    height: 110,
+                    fit: BoxFit.cover,
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 70,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: purple,
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(36),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/star.png',
+                            width: 22,
+                            height: 22,
+                          ),
+                          Text(
+                            '${space.rating}/5',
+                            style: whitestyle.copyWith(
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              '${space.city}, ${space.country}',
-              style: greystyle,
-            ),
-          ],
-        ),
-      ],
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                space.name,
+                style: blackstyle.copyWith(
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(
+                height: 2,
+              ),
+              Text.rich(
+                TextSpan(
+                  text: 'Rp${space.price}K',
+                  style: purplestyle.copyWith(
+                    fontSize: 16,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: ' / month',
+                      style: greystyle.copyWith(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Text(
+                '${space.city}, ${space.country}',
+                style: greystyle,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

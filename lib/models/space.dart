@@ -2,7 +2,7 @@ class Space {
   final int id;
   final String name;
   final String imageUrll;
-  final double price;
+  final int price;
   final String country;
   final String city;
   final int rating;
