@@ -16,8 +16,9 @@ class DetailPage extends StatelessWidget {
         bottom: false,
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/detailimg/home.jpg',
+            Image.network(
+              //'assets/images/detailimg/home.jpg',
+              space.imageUrll,
               width: MediaQuery.of(context).size.width,
               height: 350,
               fit: BoxFit.cover,
@@ -75,7 +76,7 @@ class DetailPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'aaaaaaa',
+                                  space.name,
                                   style: blackstyle.copyWith(
                                     fontSize: 22,
                                   ),
@@ -85,7 +86,7 @@ class DetailPage extends StatelessWidget {
                                 ),
                                 Text.rich(
                                   TextSpan(
-                                    text: '\$',
+                                    text: 'Rp${space.price}K',
                                     style: purplestyle.copyWith(
                                       fontSize: 16,
                                     ),
