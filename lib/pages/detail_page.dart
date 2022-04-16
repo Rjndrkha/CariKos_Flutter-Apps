@@ -282,7 +282,9 @@ class DetailPage extends StatelessWidget {
                         height: 50,
                         width: MediaQuery.of(context).size.width - (2 * edge),
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrl('tel:628931565880');
+                          },
                           color: purple,
                           child: Text(
                             'Book Now',
