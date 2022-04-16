@@ -23,27 +23,7 @@ class DetailPage extends StatelessWidget {
               height: 350,
               fit: BoxFit.cover,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: edge),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Image.asset(
-                      'assets/images/icon/btn_back.png',
-                      width: 40,
-                    ),
-                  ),
-                  Image.asset(
-                    'assets/images/icon/btn_wishlist.png',
-                    width: 40,
-                  ),
-                ],
-              ),
-            ),
+
             ListView(
               children: [
                 const SizedBox(
@@ -242,15 +222,91 @@ class DetailPage extends StatelessWidget {
                               height: 88,
                               fit: BoxFit.cover,
                             ),
+                            SizedBox(
+                              width: edge,
+                            ),
                           ],
                         ),
                       ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      //LOCATION
+                      Padding(
+                        padding: EdgeInsets.only(left: edge),
+                        child: Text(
+                          'Location',
+                          style: regulerstyle.copyWith(fontSize: 15),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: edge),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'JL.Danau Maninjau Barat III \nMalang',
+                              style: greystyle.copyWith(fontSize: 14),
+                            ),
+                            Icon(
+                              Icons.location_on,
+                              color: grey,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      //BUTTON
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: edge),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width - (2 * edge),
+                        child: RaisedButton(
+                          onPressed: () {},
+                          color: purple,
+                          child: Text(
+                            'Book Now',
+                            style: whitestyle.copyWith(fontSize: 18),
+                          ),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(17)),
+                        ),
+                      )
                     ],
                   ),
+                ),
+                const SizedBox(
+                  height: 40,
                 ),
               ],
             ),
             //END LIST VIEW
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 30, horizontal: edge),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      'assets/images/icon/btn_back.png',
+                      width: 40,
+                    ),
+                  ),
+                  Image.asset(
+                    'assets/images/icon/btn_wishlist.png',
+                    width: 40,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
