@@ -2,6 +2,7 @@ import 'package:carikos/theme.dart';
 import 'package:carikos/widgets/facility_item.dart';
 import 'package:flutter/material.dart';
 import 'package:carikos/models/space.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatelessWidget {
   final Space space;
@@ -10,6 +11,14 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    launchUrl(String url) async {
+      if (await canLaunch(url)) {
+        launch(url);
+      } else {
+        throw (url);
+      }
+    }
+
     return Scaffold(
       backgroundColor: white,
       body: SafeArea(
@@ -251,9 +260,15 @@ class DetailPage extends StatelessWidget {
                               'JL.Danau Maninjau Barat III \nMalang',
                               style: greystyle.copyWith(fontSize: 14),
                             ),
-                            Icon(
-                              Icons.location_on,
-                              color: grey,
+                            InkWell(
+                              onTap: () {
+                                launchUrl(
+                                    'https://www.google.co.id/maps/place/OYO+528+Safa+Guest+House/@-7.9702762,112.6556212,15z/data=!4m8!3m7!1s0x2dd628599e6fbc13:0x885809480e840fab!5m2!4m1!1i2!8m2!3d-7.9723757!4d112.6627377');
+                              },
+                              child: Icon(
+                                Icons.location_on,
+                                color: grey,
+                              ),
                             ),
                           ],
                         ),

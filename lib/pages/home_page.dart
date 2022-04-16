@@ -272,9 +272,11 @@ class HomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const [
-            BottomNavbarItem(
-              imageurl: 'assets/images/icon/icon_home.png',
-              isActive: true,
+            InkWell(
+              child: BottomNavbarItem(
+                imageurl: 'assets/images/icon/icon_home.png',
+                isActive: true,
+              ),
             ),
             BottomNavbarItem(
               imageurl: 'assets/images/icon/icon_mail.png',
