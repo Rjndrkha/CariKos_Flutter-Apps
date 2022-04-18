@@ -1,6 +1,7 @@
 import 'package:carikos/pages/eror_page.dart';
 import 'package:carikos/theme.dart';
 import 'package:carikos/widgets/facility_item.dart';
+import 'package:carikos/widgets/rating_item.dart';
 import 'package:flutter/material.dart';
 import 'package:carikos/models/space.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -95,41 +96,15 @@ class DetailPage extends StatelessWidget {
                               ],
                             ),
                             Row(
-                              children: [
-                                Image.asset(
-                                  'assets/images/star.png',
-                                  width: 20,
-                                ),
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                Image.asset(
-                                  'assets/images/star.png',
-                                  width: 20,
-                                ),
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                Image.asset(
-                                  'assets/images/star.png',
-                                  width: 20,
-                                ),
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                Image.asset(
-                                  'assets/images/star.png',
-                                  width: 20,
-                                ),
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                Image.asset(
-                                  'assets/images/star.png',
-                                  width: 20,
-                                  color: grey,
-                                ),
-                              ],
+                              children: [1, 2, 3, 4, 5].map((index) {
+                                return Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 2,
+                                  ),
+                                  child: RatingItem(
+                                      index: index, rating: space.rating),
+                                );
+                              }).toList(),
                             )
                           ],
                         ),
