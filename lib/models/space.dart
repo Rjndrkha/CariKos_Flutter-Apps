@@ -6,6 +6,7 @@ class Space {
   final String country;
   final String city;
   final int rating;
+  final String mapsLocation;
 
   Space({
     required this.id,
@@ -15,5 +16,6 @@ class Space {
     required this.country,
     required this.city,
     required this.rating,
+    required this.mapsLocation,
   });
 }

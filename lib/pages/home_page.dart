@@ -164,7 +164,9 @@ class HomePage extends StatelessWidget {
                         price: 150,
                         city: 'Surabaya',
                         country: 'ID',
-                        rating: 4),
+                        rating: 4,
+                        mapsLocation:
+                            'https://www.google.co.id/maps/place/OYO+528+Safa+Guest+House/@-7.9702762,112.6556212,15z/data=!4m8!3m7!1s0x2dd628599e6fbc13:0x885809480e840fab!5m2!4m1!1i2!8m2!3d-7.9723757!4d112.6627377'),
                   ),
                   const SizedBox(
                     height: 20,
@@ -178,7 +180,9 @@ class HomePage extends StatelessWidget {
                         price: 150,
                         city: 'Bali',
                         country: 'ID',
-                        rating: 4),
+                        rating: 4,
+                        mapsLocation:
+                            'https://www.google.co.id/maps/place/OYO+528+Safa+Guest+House/@-7.9702762,112.6556212,15z/data=!4m8!3m7!1s0x2dd628599e6fbc13:0x885809480e840fab!5m2!4m1!1i2!8m2!3d-7.9723757!4d112.6627377'),
                   ),
                   const SizedBox(
                     height: 20,
@@ -192,7 +196,9 @@ class HomePage extends StatelessWidget {
                         price: 150,
                         city: 'Jakarta',
                         country: 'ID',
-                        rating: 4),
+                        rating: 4,
+                        mapsLocation:
+                            'https://www.google.co.id/maps/place/OYO+528+Safa+Guest+House/@-7.9702762,112.6556212,15z/data=!4m8!3m7!1s0x2dd628599e6fbc13:0x885809480e840fab!5m2!4m1!1i2!8m2!3d-7.9723757!4d112.6627377'),
                   ),
                   const SizedBox(
                     height: 10,
