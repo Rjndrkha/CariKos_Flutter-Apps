@@ -19,8 +19,42 @@ class DetailPage extends StatelessWidget {
       } else {
         //throw (url);
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ErorPage()));
+            context, MaterialPageRoute(builder: (context) => const ErorPage()));
       }
+    }
+
+    Future<void> _showMyDialog() async {
+      // BOOK NOW CONFIRMATION
+      return showDialog<void>(
+        context: context,
+        barrierDismissible: false, // user must tap button!
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Confirmation'),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: const <Widget>[
+                  Text('Apakah anda ingin Hubungi pemilik kos ?'),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('Batal'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: const Text('Hubungi'),
+                onPressed: () {
+                  launchUrl('tel:628931565880');
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
 
     return Scaffold(
@@ -262,7 +296,8 @@ class DetailPage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width - (2 * edge),
                         child: RaisedButton(
                           onPressed: () {
-                            launchUrl('tel:628931565880');
+                            //launchUrl('tel:628931565880');
+                            _showMyDialog(); // CALLING POPUP CONFIRMATION
                           },
                           color: purple,
                           child: Text(
